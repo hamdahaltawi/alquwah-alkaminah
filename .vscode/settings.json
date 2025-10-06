@@ -1,0 +1,13 @@
+{
+    "editor.semanticHighlighting.enabled": true,
+    "files.associations": {
+        "*.js": "javascriptreact",
+        "*.jsx": "javascriptreact",
+        "*.ts": "typescript",
+        "*.tsx": "typescriptreact",
+        "*.html": "html",
+        "*.css": "css",
+        "*.json": "json",
+        "*.md": "markdown"
+    }
+}

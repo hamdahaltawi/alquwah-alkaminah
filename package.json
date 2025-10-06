@@ -1,0 +1,26 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-scripts": "5.0.0",
+    "react-router-dom": "7.9.1",
+    "recharts": "3.2.1",
+    "react-is": "18.3.1",
+    "@supabase/supabase-js": "2.57.4",
+    "@carbon/themes": "11.61.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+}
