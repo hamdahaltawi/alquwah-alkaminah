@@ -15,12 +15,28 @@
   "devDependencies": {
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.0",
-    "typescript": "5.7.2"
+    "typescript": "4.9.5",
+    "eslint-plugin-react-hooks": "4.6.0"
+  },
+  "overrides": {
+    "typescript": "4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest"],
+    "plugins": ["react-hooks"],
+    "rules": {
+      "react-hooks/exhaustive-deps": "off"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import {
   listWorkers,
   fetchSummary,
-  fetchRevMonthly,
   fetchRevByWorker,
   fetchRecentTickets,
   fetchTaxRate,
@@ -126,6 +125,18 @@ function statusToBadgeClass(status) {
       return "badge";
   }
 }
+// src/Database.js
+export async function fetchRevMonthly() {
+  // ارجعي بيانات بسيطة للـ chart مؤقتاً
+  return [
+    { month: "Jan", revenue: 0 },
+    { month: "Feb", revenue: 0 },
+    { month: "Mar", revenue: 0 },
+    { month: "Apr", revenue: 0 },
+    { month: "May", revenue: 0 },
+    { month: "Jun", revenue: 0 },
+  ];
+}
 
 export default function ManagerPage() {
   const [from, setFrom] = useState(""); // لا فلتر افتراضي
@@ -172,7 +183,7 @@ export default function ManagerPage() {
         const [w, s, m, b, tt, taxVal, kpi] = await Promise.all([
           fetchAllWorkers(), // ✅ فقط هذه لجلب العمال
           fetchSummary({ from: f, to: t, workerId: normalizedWorkerId }),
-          fetchRevMonthly({ months: 12 }),
+          fetchRevMonthly(),
           fetchRevByWorker({ from: f, to: t }),
           fetchRecentTickets({
             from: f,
@@ -369,7 +380,7 @@ export default function ManagerPage() {
       // ✅ نفس الترتيب، وخُذ العمال في wList
       const [s, m, b, tt, wList, taxVal] = await Promise.all([
         fetchSummary({ from: f, to: t, workerId: normalizedWorkerId }),
-        fetchRevMonthly({ months: 12 }),
+
         fetchRevByWorker({ from: f, to: t }),
         fetchRecentTickets({
           from: f,
